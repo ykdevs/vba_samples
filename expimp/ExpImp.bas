@@ -47,7 +47,7 @@ Private Sub ImportAll(sPath As String)
     
     '// 全モジュールのファイルパスを取得
     Dim FileList As Collection
-    Set FileList = FileUtil.GetFiles(sPath, "\*")
+    Set FileList = oFileUtil.GetFiles(sPath, "\*")
         
     '// 全モジュールをループ
     With ActiveWorkbook.VBProject
@@ -64,7 +64,7 @@ Private Sub ImportAll(sPath As String)
                 '// 同名モジュールを削除
                 Call .VBComponents.Remove(.VBComponents(oFso.GetBaseName(sModule)))
                 '// モジュールを追加
-                Call .VBComponents.Import(sFileName)
+                Call .VBComponents.Import(sTempName)
                 '// Import確認用ログ出力
                 Debug.Print sModule
             

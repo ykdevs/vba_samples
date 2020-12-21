@@ -29,10 +29,13 @@ End Sub
 ' Iterator
 ' https://docs.microsoft.com/ja-jp/office/vba/language/concepts/getting-started/using-for-eachnext-statements
 '
-Property Get NewEnum() As IUnknown
+' Macでも動くようにProperty GetでなくFunctionにしている
+'
+' Property Get NewEnum() As IUnknown
+Public Function NewEnum() As IUnknown
 Attribute NewEnum.VB_UserMemId = -4
     Set NewEnum = oKeys.[_NewEnum]
-End Property
+End Function
 
 '
 ' Count :   件数を返す

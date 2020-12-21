@@ -7,7 +7,7 @@ Attribute VB_Name = "CollectionObjectTest"
 
 Sub CollectionObjectTest()
 
-    ' Dictionary型の作成
+    ' Collection型の作成
     Dim oDict As Collection
     Set oDict = New Collection
 
